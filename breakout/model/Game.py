@@ -1,5 +1,6 @@
-from Ball import *
-from pong.model.Paddle import Paddle
+from breakout.model.Ball import Ball
+from breakout.model.Paddle import Paddle as Paddle
+from breakout.model.Brick import Bricks as Brick
 
 
 class Game:
@@ -21,7 +22,7 @@ class Game:
         brick_width = self.screen_width // cols
         for row in range(rows):
             for col in range(cols):
-                bricks.append(bricks(col * brick_width, row, brick_width, 20, 1, (255, 0, 0)))
+                bricks.append(Brick(col * brick_width, row, brick_width, 20, 1, (255, 0, 0)))
         return bricks
 
     def draw_bricks(self):
@@ -83,6 +84,7 @@ class Game:
         if self.is_ball_out_of_bound(self.ball):
             print("Bola saiu do campo")
             self.lose_life()
-            return False
+            if self.lifes <= 0:
+                return False
 
         return True

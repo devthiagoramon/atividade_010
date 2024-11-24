@@ -1,4 +1,4 @@
-class Pad:
+class Paddle:
     def __init__(self, x, y, width, speed):
         self.x = x
         self.y = y

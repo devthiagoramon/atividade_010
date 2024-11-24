@@ -1,4 +1,4 @@
-from model.Game import Game
+from breakout.model.Game import Game
 import time
 
 

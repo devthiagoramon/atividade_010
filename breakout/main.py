@@ -5,13 +5,12 @@ import time
 def main():
     screen_width, screen_height = 40, 20
     game = Game(screen_width, screen_height)
+    game.start_game()
+
     while True:
-        print("\n" + "=" * 40)
         if not game.update():
             break
-        game.update()
         time.sleep(0.5)
-        print("\n" + "=" * 40)
 
 
 if __name__ == '__main__':

@@ -1,15 +1,18 @@
 class Paddle:
-    def __init__(self, x, y, width):
+    def __init__(self, x, y, height):
         self.x = x
         self.y = y
-        self.width = width
+        self.width = 1
+        self.height = height
+        self.speed = 5
 
-    def move(self, direction, screen_width):
-        if direction == "left" and self.x > 0:
-            self.x -= 1
-        elif direction == "right" and self.x + self.width < screen_width:
-            self.x += 1
-        elif direction == "up" and self.y > 0:
-            self.y -= 1
-        elif direction == "down" and self.y < screen_width:
-            self.y += 1
+    def go_up(self):
+        self.y -= 1
+        print(f"Raquete movida para cima: nova posição ({self.x}, {self.y})")
+
+    def go_down(self):
+        self.y += 1
+        print(f"Raquete movida para baixo: nova posição ({self.x}, {self.y})")
+
+    def draw(self):
+        print(f"Desenhando raquete na posição ({self.x}, {self.y})")

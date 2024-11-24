@@ -1,17 +1,24 @@
 class Ball:
-    def __init__(self, x, y, speed_x, speed_y):
+    def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.speed_x = speed_x
-        self.speed_y = speed_y
+        self.width = 1
+        self.height = 1
+        self.x_velocity = 1
+        self.y_velocity = 1
 
     def move(self):
-        print(f"Posição da bola ({self.x}, {self.y})")
-        self.x += self.speed_x
-        self.y += self.speed_y
+        self.x += self.x_velocity
+        self.y += self.y_velocity
+        print(f"Bola movida para ({self.x}, {self.y})")
 
     def bounce_horizontal(self):
-        self.speed_x = -self.speed_x
+        self.x_velocity = -self.x_velocity
+        print("Bola mudou de direção horizontal")
 
     def bounce_vertical(self):
-        self.speed_y = -self.speed_y
+        self.y_velocity = -self.y_velocity
+        print("Bola mudou de direção vertical")
+
+    def ball_hit(self):
+        print("A bola foi atingida!")

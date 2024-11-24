@@ -1,5 +1,5 @@
-from Ball import Ball
-from Paddle import Paddle
+from pong.model.Ball import Ball
+from pong.model.Paddle import Paddle
 
 
 class Game:

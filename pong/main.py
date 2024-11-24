@@ -1,4 +1,4 @@
-from model.Game import Game
+from pong.model.Game import Game
 import time
 
 
@@ -10,8 +10,8 @@ def main():
     while True:
         print("\n" + "=" * 40)
         game.update()
-        time.sleep(0.5)
         print("=" * 40)
+        time.sleep(0.5)
 
         # Encerrar o jogo se necessário
         if game.points_player_1 >= 10 or game.points_player_2 >= 10:
